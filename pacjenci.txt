@@ -1,0 +1,5 @@
+ID: 0
+Imie: Wiola
+Nazwisko: Lucky
+Pesel: 85893589489
+Choroba: brak

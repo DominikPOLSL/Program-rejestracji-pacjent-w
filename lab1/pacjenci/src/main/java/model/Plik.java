@@ -16,11 +16,11 @@ public class Plik {
        FileWriter writer =  new FileWriter(file, true);
 
        lista.add(a);
-       writer.write(a.getId() +"\n");
-       writer.write(a.getImie() +"\n");
-       writer.write(a.getNazwisko()+"\n");
-       writer.write(a.getPesel()+"\n");
-       writer.write(a.getChoroba()+"\n");
+       writer.write("ID: " + a.getId() +"\n");
+       writer.write("Imie: "+ a.getImie() +"\n");
+       writer.write("Nazwisko: "+ a.getNazwisko()+"\n");
+       writer.write("Pesel: " + a.getPesel()+"\n");
+       writer.write("Choroba: " + a.getChoroba()+"\n");
 
        writer.close();
 
