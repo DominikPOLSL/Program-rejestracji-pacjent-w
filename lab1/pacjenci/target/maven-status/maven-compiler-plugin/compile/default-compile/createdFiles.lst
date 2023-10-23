@@ -1,0 +1,4 @@
+model\Dane.class
+model\PacjentModel.class
+view\Pobranie.class
+com\mycompany\pacjenci\Pacjenci.class
