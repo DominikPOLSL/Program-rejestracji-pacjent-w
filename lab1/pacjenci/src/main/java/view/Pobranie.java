@@ -3,24 +3,27 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package view;
+import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
 import model.Dane;
 /**
- *
+ * Create new patient with no set atributes.
  * @author Dominik
  */
 public class Pobranie {
     
    Dane pacjent = new Dane();
-   
-   public void func(List<Dane> lista)
-   {
-       Scanner scanner = new Scanner(System.in);
 
+    /**
+     * User has to type all information about patient, then data is set into object
+     * @param lista List which contains all patients in database
+     * @throws IOException
+     */
+   public void func(List<Dane> lista) throws IOException {
+       Scanner scanner = new Scanner(System.in);
        /** Podanie ID */
-       //System.out.println("ID: ");
-       //String data = scanner.next();
+
        pacjent.setId(lista.size());
 
        /** Podanie imienia */
@@ -55,5 +58,9 @@ public class Pobranie {
 
 
    }
+
+    /**
+     * Return patient with all parameters set
+     */
    public Dane pobranyPacjent() {return pacjent;}
 }

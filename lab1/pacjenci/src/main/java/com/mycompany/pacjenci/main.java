@@ -4,32 +4,26 @@
 
 package com.mycompany.pacjenci;
 
-import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
-
 import model.Dane;
 import model.Plik;
 import view.Pobranie;
-
-import javax.swing.text.html.parser.Parser;
-import java.io.FileWriter;
-import java.io.PrintWriter;
 import java.io.IOException;
 
 /**
- * Opis przekazywania parametrów:
- * 0) Uruchomienie programu z lini poleceń w formie Imie, Naziwsko, Wiek, Pesel, Choroba
- * 1) Utworzenie instancji klasy Dane o nazwie "pacjent" w klasie Pobranie
- * 2) Uzupelnienie parametrow obiektu "pacjent" poprzez settery (setImie...)
- * 3) Zwrócenie uzupelnionego obiektu do kontorlera (main) i dodanie go do listy pacjentow
+ * Class is used as controller and combine together Model-Viev-Controller packages
  * @author Dominik
  */
 
 
 public class main {
 
-
+    /**
+     * Gets input argmunets and checks if arguments are equal to 4. If not user must add patient manually. Also checks if IO File is opened/closed correctly
+     * @param args Input arguments form command line
+     * @throws IOException
+     */
     public static void main(String[] args) throws IOException {
 
         List<Dane> lista = new ArrayList<>();
@@ -37,12 +31,6 @@ public class main {
         Plik plik = new Plik();
 
         plik.read(lista);
-
-        /**
-         * W przypadku gdy program dostanie błędne parametry startowe, należy wprowadzić pacjenta ręcznie
-         * Sprawdzana jest również poprawność podanego ID wraz z obsługą wyjątków
-         */
-
 
         if (args.length != 4)
         {
@@ -59,7 +47,7 @@ public class main {
                     break;
 
                 } catch (NumberFormatException e) {
-                    System.out.println("ID nie moze byc tekstem");
+                    System.out.println("Wiek nie moze byc tekstem");
                 }
             }
         }
@@ -76,7 +64,6 @@ public class main {
 
         }
 
-        /** Wyświetlenie aktualnej bazy pacjentów po aktualizacji */
         System.out.println("Ilosc pacjentow: " + lista.size());
 
         System.out.println("Aktualna baza: ");
