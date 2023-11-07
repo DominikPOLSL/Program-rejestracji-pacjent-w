@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package view;
+import java.util.List;
 import java.util.Scanner;
 import model.Dane;
 /**
@@ -13,18 +14,18 @@ public class Pobranie {
     
    Dane pacjent = new Dane();
    
-   public void func()
+   public void func(List<Dane> lista)
    {
        Scanner scanner = new Scanner(System.in);
 
        /** Podanie ID */
-       System.out.println("ID: ");
-       String data = scanner.next();
-       pacjent.setId(Integer.parseInt(data));
+       //System.out.println("ID: ");
+       //String data = scanner.next();
+       pacjent.setId(lista.size());
 
        /** Podanie imienia */
        System.out.println("Imie: ");
-       data = scanner.next();
+       String data = scanner.next();
        pacjent.setImie(data);
 
        /** Podanie nazwiska */

@@ -15,7 +15,7 @@ public class Dane implements Serializable {
     private int id;
     private String imie, nazwisko, pesel, choroba;
 
-    public Dane(String imie, String nazwisko, String pesel, String choroba, int id){
+    public Dane(int id, String imie, String nazwisko, String pesel, String choroba){
         this.imie = imie;
         this.nazwisko = nazwisko;
         this.pesel = pesel;
@@ -65,7 +65,7 @@ public class Dane implements Serializable {
 
     public void show()
     {
-        System.out.println("ID: " + getId());
+        System.out.println("ID: " + this.getId());
         System.out.println("Imie: " + getImie());
         System.out.println("Nazwisko: " + getNazwisko());
         System.out.println("Pesel: " + getPesel());

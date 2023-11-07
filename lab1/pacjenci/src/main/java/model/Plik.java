@@ -16,12 +16,13 @@ public class Plik {
        FileWriter writer =  new FileWriter(file, true);
 
        lista.add(a);
-       writer.write("ID: " + a.getId() +"\n");
+
+       writer.write("ID: " + (lista.size() - 1) + "\n");
        writer.write("Imie: "+ a.getImie() +"\n");
        writer.write("Nazwisko: "+ a.getNazwisko()+"\n");
        writer.write("Pesel: " + a.getPesel()+"\n");
        writer.write("Choroba: " + a.getChoroba()+"\n");
-
+       writer.write("\n");
        writer.close();
 
     }
@@ -33,14 +34,20 @@ public class Plik {
 
             while (scanner.hasNext()) {
 
-                int id = Integer.parseInt(scanner.next());
+                scanner.next();
+                String id = scanner.next();
+                scanner.next();
                 String imie = scanner.next();
+                scanner.next();
                 String nazwisko = scanner.next();
+                scanner.next();
                 String pesel = scanner.next();
+                scanner.next();
                 String choroba = scanner.next();
+                System.out.println(lista.size() + " " + imie + " "+ nazwisko + " " + pesel + " " + choroba + "\n");
 
-
-                lista.add(new Dane(imie, nazwisko, pesel, choroba, id));
+                lista.add(new Dane(lista.size(), imie, nazwisko, pesel, choroba));
+                //System.out.println(lista.get(lista.size()-1).getId());
             }
         }
     }

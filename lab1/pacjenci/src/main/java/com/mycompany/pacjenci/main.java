@@ -12,6 +12,7 @@ import model.Dane;
 import model.Plik;
 import view.Pobranie;
 
+import javax.swing.text.html.parser.Parser;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.io.IOException;
@@ -52,7 +53,7 @@ public class main {
             while(true) {
                 try {
                     Pobranie pobierz = new Pobranie();
-                    pobierz.func();
+                    pobierz.func(lista);
                     Dane pacjent = new Dane();
                     plik.save(pobierz.pobranyPacjent(), lista);
                     break;
@@ -66,7 +67,7 @@ public class main {
         {
             /** Dane pobierane są podczas wywołania programu i zapisywane do pliku "pacjenci.txt" */
 
-            Dane pacjent = new Dane(args[0],args[1],args[2],args[3],lista.size());
+            Dane pacjent = new Dane(lista.size(),args[0],args[1],args[2], args[3]);
 
             plik.save(pacjent,lista);
 
