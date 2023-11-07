@@ -7,7 +7,7 @@ import java.util.Scanner;
 /**
  * Class which is reponsible for saving and reading data to file
  */
-public class Plik {
+public class SR {
 
     /**
      * Saves all data into .txt file
@@ -15,7 +15,7 @@ public class Plik {
      * @param lista List of all patients
      * @throws IOException
      */
-    public void save(Dane a,List<Dane>lista) throws IOException {
+    public void save(Data a, List<Data>lista) throws IOException {
 
         File file = new File("pacjenci.txt");
         if (!file.exists())
@@ -26,10 +26,10 @@ public class Plik {
        lista.add(a);
 
        writer.write("ID: " + (lista.size() - 1) + "\n");
-       writer.write("Imie: "+ a.getImie() +"\n");
-       writer.write("Nazwisko: "+ a.getNazwisko()+"\n");
+       writer.write("Imie: "+ a.getName() +"\n");
+       writer.write("Nazwisko: "+ a.getSurname()+"\n");
        writer.write("Pesel: " + a.getPesel()+"\n");
-       writer.write("Choroba: " + a.getChoroba()+"\n");
+       writer.write("Choroba: " + a.getIlness()+"\n");
        writer.write("\n");
        writer.close();
 
@@ -40,7 +40,7 @@ public class Plik {
      * @param lista List of all patients which is going to be printed in console
      * @throws FileNotFoundException
      */
-    public void read(List<Dane> lista) throws FileNotFoundException {
+    public void read(List<Data> lista) throws FileNotFoundException {
 
         File file = new File("pacjenci.txt");
         if(file.exists()) {
@@ -60,7 +60,7 @@ public class Plik {
                 String choroba = scanner.next();
                 System.out.println(lista.size() + " " + imie + " "+ nazwisko + " " + pesel + " " + choroba + "\n");
 
-                lista.add(new Dane(lista.size(), imie, nazwisko, pesel, choroba));
+                lista.add(new Data(lista.size(), imie, nazwisko, pesel, choroba));
                 //System.out.println(lista.get(lista.size()-1).getId());
             }
         }
@@ -70,7 +70,7 @@ public class Plik {
      * Method shows all data form every single Patient, using show() method from Dane
      * @param lista List of all patients
      */
-    public void show(List<Dane>lista)
+    public void show(List<Data>lista)
     {
         for(var x:lista)
             x.show();

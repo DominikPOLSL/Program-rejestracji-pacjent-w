@@ -6,9 +6,9 @@ package com.mycompany.pacjenci;
 
 import java.util.ArrayList;
 import java.util.List;
-import model.Dane;
-import model.Plik;
-import view.Pobranie;
+import model.Data;
+import model.SR;
+import view.Download;
 import java.io.IOException;
 
 /**
@@ -26,9 +26,9 @@ public class main {
      */
     public static void main(String[] args) throws IOException {
 
-        List<Dane> lista = new ArrayList<>();
+        List<Data> lista = new ArrayList<>();
 
-        Plik plik = new Plik();
+        SR plik = new SR();
 
         plik.read(lista);
 
@@ -40,9 +40,9 @@ public class main {
 
             while(true) {
                 try {
-                    Pobranie pobierz = new Pobranie();
+                    Download pobierz = new Download();
                     pobierz.func(lista);
-                    Dane pacjent = new Dane();
+                    Data patient = new Data();
                     plik.save(pobierz.pobranyPacjent(), lista);
                     break;
 
@@ -55,9 +55,9 @@ public class main {
         {
             /** Dane pobierane są podczas wywołania programu i zapisywane do pliku "pacjenci.txt" */
 
-            Dane pacjent = new Dane(lista.size(),args[0],args[1],args[2], args[3]);
+            Data patient = new Data(lista.size(),args[0],args[1],args[2], args[3]);
 
-            plik.save(pacjent,lista);
+            plik.save(patient,lista);
 
             System.out.println();
             System.out.println("Dodano dane pacjenta");

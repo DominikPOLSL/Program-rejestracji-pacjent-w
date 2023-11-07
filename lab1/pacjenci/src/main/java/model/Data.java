@@ -10,47 +10,47 @@ import java.io.Serializable;
  * Contains all data about Patient.
  * @author Dominik
  */
-public class Dane implements Serializable {
+public class Data implements Serializable {
     
     private int id;
-    private String imie, nazwisko, pesel, choroba;
+    private String name, surname, pesel, ilness;
 
     /**
      * Constructor which set atributes for new patient
      * @param id ID of patient in database, starts from 0
-     * @param imie Name of patient
-     * @param nazwisko - Surname of patient
+     * @param name Name of patient
+     * @param surname - Surname of patient
      * @param pesel - Real ID of patient
-     * @param choroba - Disease that affects the patient
+     * @param ilness - Disease that affects the patient
      */
-    public Dane(int id, String imie, String nazwisko, String pesel, String choroba){
-        this.imie = imie;
-        this.nazwisko = nazwisko;
+    public Data(int id, String name, String surname, String pesel, String ilness){
+        this.name = name;
+        this.surname = surname;
         this.pesel = pesel;
-        this.choroba = choroba;
+        this.ilness = ilness;
         this.id = id;
     }
 
-    public Dane(){}
+    public Data(){}
 
-    public String getImie() {return imie;}
+    public String getName() {return name;}
 
-    public String getNazwisko() {return nazwisko;}
+    public String getSurname() {return surname;}
 
     public String getPesel() {return pesel;}
 
-    public String getChoroba() {return choroba;}
+    public String getIlness() {return ilness;}
 
     public int getId() {return id;}
 
 
-    public void setImie(String imie) {this.imie = imie;}
+    public void setName(String name) {this.name = name;}
 
-    public void setNazwisko(String nazwisko) {this.nazwisko = nazwisko;}
+    public void setSurname(String surname) {this.surname = surname;}
 
     public void setPesel(String pesel) {this.pesel = pesel;}
 
-    public void setChoroba(String choroba) {this.choroba = choroba;}
+    public void setIlness(String ilness) {this.ilness = ilness;}
 
     public void setId(int id) {this.id = id;}
 
@@ -60,10 +60,10 @@ public class Dane implements Serializable {
     public void show()
     {
         System.out.println("ID: " + this.getId());
-        System.out.println("Imie: " + getImie());
-        System.out.println("Nazwisko: " + getNazwisko());
+        System.out.println("Imie: " + getName());
+        System.out.println("Nazwisko: " + getSurname());
         System.out.println("Pesel: " + getPesel());
-        System.out.println("Choroba: " + getChoroba());
+        System.out.println("Choroba: " + getIlness());
         System.out.println();
     }
     
